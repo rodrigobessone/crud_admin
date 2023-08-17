@@ -1,6 +1,14 @@
-import express, { Application, json } from 'express'
+import "express-async-errors";
+import express from "express";
 
-const app: Application = express()
-app.use(json())
+import { errorHandler } from "./error/handle.error";
+import routes from "./routes/router.routes";
+const app = express();
 
-export default app
+app.use(express.json());
+
+app.use(routes);
+
+app.use(errorHandler);
+
+export default app;

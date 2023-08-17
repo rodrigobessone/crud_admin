@@ -14,7 +14,7 @@ const deleteTables = async (database: Client): Promise<void> => {
     console.error({
       message: `Aconteceu um erro ${err.code}. Verifique se o nome da sua tabela e as colunas estão de acordo com o solicitado na descrição da entrega.`,
       error: err.message,
-    })
+    }),
   );
 };
 
@@ -24,7 +24,7 @@ const createTables = async (database: Client) => {
     console.error({
       message: `Aconteceu um erro ${err.code}. Verifique se as querys de criação das tabelas em 'sql/createTables.sql' estão funcionais. E se o nome da sua tabela e colunas estão de acordo com o solicitado na descrição da entrega`,
       error: err.message,
-    })
+    }),
   );
 };
 
