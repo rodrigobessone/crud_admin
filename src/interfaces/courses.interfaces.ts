@@ -1,10 +1,14 @@
-interface Course {
-  id: number;
-  name: string;
-  description: string;
-}
+import { z } from "zod";
 
-// Interface para o tipo de dados do token
-interface PayloadToken {
-  admin: boolean;
-}
+const Course = z.object({
+  id: z.number(),
+  name: z.string(),
+  description: z.string(),
+});
+
+const PayloadToken = z.object({
+  admin: z.boolean(),
+});
+
+export type Course = z.infer<typeof Course>;
+export type PayloadToken = z.infer<typeof PayloadToken>;
